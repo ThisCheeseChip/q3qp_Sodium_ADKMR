@@ -8,11 +8,14 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+     <!-- Text and button for the title screen -->
     <div id="title-screen">
         <h1>Paper Mache</h1>
         <button id="start-button">START</button>
     </div>
-  
+
+    <!-- css calls and buttons for toss coin-->
     <div id="game-screen" style="display: none;">
         <div class="game-content">
             <div class="heads-or-tails">
@@ -28,6 +31,7 @@
                 <p id="result">You picked _____. </p>
                 <p id="result2">You ____. </p>
 
+                 <!-- buttons for the confirm, reset, and mute function -->
                 <button id="confirm" disabled onclick="confirm()">Confirm Choice</button>
                 <button id="reset" onclick="reset()">RESET</button>
                 <button id="mute" onclick="mute()">MUTE AUDIO</button>
@@ -35,6 +39,7 @@
                 
             </div>
 
+            <!--  health status of player -->
             <div class="screen">
                 <p>HP: <p id="playerHP">100</p> </p>
                 <div id="pbar" class="player-bar">
@@ -54,6 +59,7 @@
                 
                 <p class="space"> HP: <p id="opponentHP">100</p> </p>
 
+                <!--  health status of opponent -->
                 <div id="obar" class="opponent-bar">
                     <div class="opponent-health-container" id="opponent-health">
                       <div class="health-bar" id="health-bar11"></div>
@@ -71,22 +77,27 @@
 
             </div>
 
+              <!-- images -->
             <img id="player" src="media/images/player.png">
             <img id="opponent" src="media/images/opponent.png">
             <img id="fireball" src="media/images/fireball.png">
 
             <br> <br> <br> <br>
 
+                  <!-- button for attack, defend, and mute -->
             <button id="attack" value="attack" disabled>Attack</button>
             <button id="defend" value="defend" disabled>Defend</button>
             <button id="fullreset" onclick="fullreset()" disabled>FULL RESET</button>
 
+                  <!-- HTML for log feature  -->
             <textarea id="log" rows=50 name="log" autofocus readonly> </textarea>
 
+                  <!-- elemts for developers  -->
             <div class="credits"> 
                 <p id="credits">Created By: <br> Daniel R. Alcantara <br> Audrey Chic Abala Albarillo <br> Krishna Jazz D. Ares <br> Maruen Zeina P. Bontuan <br> Rey Andres M. Genita </p>
             </div>
-            
+
+                  <!-- audio -->
             <audio autoplay loop id="bgm"><source src="media/bgm.mp3"></audio>
       </div>
     </div>
