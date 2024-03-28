@@ -1,15 +1,15 @@
-var playerHP, opponentHP, fulllog;
+var playerHP, opponentHP, fulllog; //initializes the values
 fulllog = "";
 playerHP = 100;
 opponentHP = 100;
 
-document.getElementById("start-button").addEventListener("click", function() {
+document.getElementById("start-button").addEventListener("click", function() { //title screen
   document.getElementById("title-screen").style.display = "none";
-  document.getElementById("game-screen").style.display = "block";
+  document.getElementById("game-screen").style.display = "block"; //when clicking a button the game appears and the title screen disappears
 });
 
 function mute(){
-  var unmute = document.getElementById("mute").innerHTML;
+  var unmute = document.getElementById("mute").innerHTML; //mutes the in-game music
 
   if (unmute == "UNMUTE AUDIO"){
     document.getElementById("bgm").muted = false;
@@ -23,11 +23,11 @@ function mute(){
 
 function tossCoin() {
   var first;
-  const sides = ["Heads", "Tails"];
-  const result = sides[Math.floor(Math.random() * sides.length)];
-  const toss = document.getElementById("toss").value;
+  const sides = ["Heads", "Tails"]; //array of the two sides
+  const result = sides[Math.floor(Math.random() * sides.length)]; //calculates the sides
+  const toss = document.getElementById("toss").value; 
 
-  if (toss === result) {
+  if (toss === result) { //compares if you won or lost
     document.getElementById("result").innerHTML = "You picked " + toss + ".";
     document.getElementById("result2").innerHTML = "You Win, You go first!"
     var first = true;
@@ -38,30 +38,26 @@ function tossCoin() {
     var first = false;
   }
 
-  var invalid2 = document.getElementById("confirm");
+  var invalid2 = document.getElementById("confirm"); //enables the confirm button when clicking the toss coin
   invalid2.removeAttribute("disabled");
  
-  const button = document.getElementById("flip");
+  const button = document.getElementById("flip"); //disables the flip button when clicking the flip button
   button.setAttribute("disabled", "");
 
   document.getElementById("coinBox").innerHTML = result.charAt(0).toUpperCase() + result.slice(1);
   return(this.first);
 }
 
-function reset(){
-  document.getElementById("result").innerHTML = "You picked _____.";
+function reset(){ //resets the heads or tails
+  document.getElementById("result").innerHTML = "You picked _____."; //initializes the text back
   document.getElementById("result2").innerHTML = "You ____.";
   document.getElementById("coinBox").innerHTML = " ";
 
   var invalid2 = document.getElementById("confirm");
-  invalid2.setAttribute("disabled", "");
+  invalid2.setAttribute("disabled", ""); //when resetting, the confirm button will be disabled
 
-  const button = document.getElementById("flip");
+  const button = document.getElementById("flip"); //when resetting, the flip coin button will be enabled
   button.removeAttribute("disabled");
-  result = " ";
-  toss = " ";
-  first = true;
-
 }
 
 function confirm() { //runs game//
