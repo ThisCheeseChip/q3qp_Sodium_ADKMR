@@ -260,6 +260,10 @@ function playerDefend(){
     playerHP = playerHP - oppAttack;
     oppAttack = oppAttack - block;
 
+    if(oppAttack < 0){
+      oppAttack = 0;
+    }
+
     if(oppAttack == 0){
       script = "You have fully blocked the opponent's attack." + '\n';
     }
