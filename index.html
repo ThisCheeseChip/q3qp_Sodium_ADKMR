@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Mache</title>
+    <link rel="icon" type="image/png" href="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="title-screen">
+        <h1>Paper Mache</h1>
+        <button id="start-button">START</button>
+    </div>
+  
+    <div id="game-screen" style="display: none;">
+        <div class="game-content">
+            <div class="heads-or-tails">
+                <h1>Who goes first?</h1>
+                <div class="coin-box" id="coinBox"></div>
+                <label>Choose heads or tails:</label>
+                <select id="toss">
+                    <option selected value="Heads">Heads</option>
+                    <option value="Tails">Tails</option>
+                </select>
+
+                <button onclick="tossCoin()" id="flip">Toss Coin</button>
+                <p id="result">You picked _____. </p>
+                <p id="result2">You ____. </p>
+
+                <button id="confirm" disabled onclick="confirm()">Confirm Choice</button>
+                <button id="reset" onclick="reset()">RESET</button>
+                <button id="mute" onclick="mute()">MUTE AUDIO</button>
+                <br>
+                
+            </div>
+
+            <div class="screen">
+                <p>HP: <p id="playerHP">100</p> </p>
+                <div id="pbar" class="player-bar">
+                    <div class="player-health-container" id="player-health">
+                      <div class="health-bar" id="health-bar1"></div>
+                      <div class="health-bar" id="health-bar2"></div>
+                      <div class="health-bar" id="health-bar3"></div>
+                      <div class="health-bar" id="health-bar4"></div>
+                      <div class="health-bar" id="health-bar5"></div>
+                      <div class="health-bar" id="health-bar6"></div>
+                      <div class="health-bar" id="health-bar7"></div>
+                      <div class="health-bar" id="health-bar8"></div>
+                      <div class="health-bar" id="health-bar9"></div>
+                      <div class="health-bar" id="health-bar10"></div>
+                    </div>
+                  </div>
+                
+                <p class="space"> HP: <p id="opponentHP">100</p> </p>
+
+                <div id="obar" class="opponent-bar">
+                    <div class="opponent-health-container" id="opponent-health">
+                      <div class="health-bar" id="health-bar11"></div>
+                      <div class="health-bar" id="health-bar12"></div>
+                      <div class="health-bar" id="health-bar13"></div>
+                      <div class="health-bar" id="health-bar14"></div>
+                      <div class="health-bar" id="health-bar15"></div>
+                      <div class="health-bar" id="health-bar16"></div>
+                      <div class="health-bar" id="health-bar17"></div>
+                      <div class="health-bar" id="health-bar18"></div>
+                      <div class="health-bar" id="health-bar19"></div>
+                      <div class="health-bar" id="health-bar20"></div>
+                    </div>
+
+
+            </div>
+
+            <img id="player" src="media/images/player.png">
+            <img id="opponent" src="media/images/opponent.png">
+            <img id="fireball" src="media/images/fireball.png">
+
+            <br> <br> <br> <br>
+
+            <button id="attack" value="attack" disabled>Attack</button>
+            <button id="defend" value="defend" disabled>Defend</button>
+            <button id="fullreset" onclick="fullreset()" disabled>FULL RESET</button>
+
+            <textarea id="log" rows=50 name="log" autofocus readonly> </textarea>
+
+            <div class="credits"> 
+                <p id="credits">Created By: <br> Daniel R. Alcantara <br> Audrey Chic Abala Albarillo <br> Krishna Jazz D. Ares <br> Maruen Zeina P. Bontuan <br> Rey Andres M. Genita </p>
+            </div>
+            
+            <audio autoplay loop id="bgm"><source src="media/bgm.mp3"></audio>
+      </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
