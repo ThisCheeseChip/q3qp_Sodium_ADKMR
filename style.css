@@ -1,10 +1,12 @@
+/* style for the body */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-  
+
+/* style for the title page */
 #title-screen {
     background-image: url('media/images/paperbackground.jpg'); 
     background-size: cover;
@@ -14,12 +16,14 @@ html, body {
     align-items: center;
     height: 100%;
 }
-  
+
+/* style for the button on the title page */
 #start-button {
     padding: 10px 20px;
     font-size: 18px;
 }
 
+/* style for the game screen */
 #game-screen {
     background-image: url(media/images/paperbackground.jpg);
     top: 0;
@@ -27,7 +31,8 @@ html, body {
     width: 100%;
     height: 100%;
 }
-  
+
+/* style of the contents of the game */
 .game-content {
     display: flex;
     align-items: flex-end;
@@ -35,6 +40,8 @@ html, body {
     z-index: 99;
 }
 
+
+/* style for toss coin feature*/
 .heads-or-tails {
     border: 1px solid black;
     margin-left: 5vw;
@@ -42,6 +49,7 @@ html, body {
     height: 50vh;
 }
 
+/* style for toss coin feature */
 .heads-or-tails .coin-box {
     width: 100px;
     height: 100px;
@@ -55,6 +63,7 @@ html, body {
     border-radius: 100px;
 }
 
+/* style for the screen of the game proper */
 .screen {
     height: 50vh;
     width: 60vw;
@@ -67,10 +76,12 @@ html, body {
     padding-bottom: 25px;
 }
 
-.space {
+
+.space {/*margin*/
     margin-left: 53vw;
 }
 
+/*style for log feature*/
 #log {
     border: 1px solid black;
     position: absolute;
@@ -86,6 +97,7 @@ html, body {
     resize: none;
 }
 
+/* style for the attack button*/
 #attack{
     position: absolute;
     right: 47.5%;
@@ -96,6 +108,7 @@ html, body {
     padding: 15px;
 }
 
+/* style for the defend button*/
 #defend{
     position: absolute;
     right: 7.5%;
@@ -106,6 +119,7 @@ html, body {
     padding: 15px;
 }
 
+/* style for the reset button*/
 #fullreset{
     position: absolute;
     right: 26.9%;
@@ -115,6 +129,7 @@ html, body {
     padding: 10px;
 }
 
+/* style for the names of the contributers part*/
 #credits{
     position: absolute;
     left: 5.3%;
@@ -125,22 +140,26 @@ html, body {
     font-size: 21px;
 }
 
+/*stlye for player health container */
 .player-health-container{
     display: flex;
     justify-content: flex-start;
 }
 
+/*stlye for player opponent health container*/
 .opponent-health-container{
     display: flex;
 }
-  
+
+/*stlye for health bar */
 .health-bar {
     width: 30px;
     height: 13px;
     background-color: green;
     margin: 2px;
 }
-  
+
+/*stlye for player health bar */
 .player-bar {
     position: absolute;
     top: 15%;
@@ -148,7 +167,8 @@ html, body {
     margin: 10px;
     justify-content: flex-start;
 }
-  
+
+/*stlye for opponent health bar */
 .opponent-bar {
     position: absolute;
     top: 15%;
@@ -156,24 +176,28 @@ html, body {
     margin: 10px;
 }
 
+/*position of player */
 #player{
     position: absolute;
     top: 33%;
     right: 50%;
 }
 
+/*position of opponent */
 #opponent{
     position: absolute;
     top: 32%;
     right: 10%;
 }
 
+/*extra animations for the game*/
 #fireball{
     position: absolute;
     top: 35%;
     right: 40%;
 }
 
+/*health bar animations*/
 #health-bar3 {
     background-color: yellowgreen
 }
