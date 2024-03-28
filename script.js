@@ -248,33 +248,34 @@ function playerAttack(opponentHP, playerHP, fulllog){
 }
 
 function playerDefend(){
-  var oppAttack = damageCalc();
-  var block = defenseCalc();
+  var oppAttack = damageCalc(); //calculates the damage of the opponent
+  var block = defenseCalc(); //calculates the amount of damaged blocked from the opponent
 
-  var oppAct = opponentAction();
+  var oppAct = opponentAction(); //action of the opponent
 
-  if (oppAct == 0){
+  if (oppAct == 0){ //defending
     script = "The opponent blocked.... and you too...  " + '\n';
   }
-  else {
-    playerHP = playerHP - oppAttack;
+  else { //attacking
+    playerHP = playerHP - oppAttack; //reduction of the player's health
     oppAttack = oppAttack - block;
 
     if(oppAttack < 0){
-      oppAttack = 0;
+      oppAttack = 0; //making sure attack will never go negative
     }
 
     if(oppAttack == 0){
-      script = "You have fully blocked the opponent's attack." + '\n';
+      script = "You have fully blocked the opponent's attack." + '\n'; //fully blocked
     }
     else{
       script = "You blocked " + block + " of the opponent's damage. And you took " + oppAttack + " damage." + '\n';
     }
   }      
 
-  fulllog = script + fulllog;
-  document.getElementById("log").value = fulllog;
-
+  fulllog = script + fulllog; //updating the event log
+  document.getElementById("log").value = fulllog; //displaying the event log
+  
+  //this is the health bar system, basically style.display = "none" here makes the bars disappear
   if (playerHP >= 90 && playerHP < 100){
     document.getElementById("health-bar1").style.display = "none";
   }
@@ -337,7 +338,7 @@ function playerDefend(){
     document.getElementById("health-bar20").style.display = "none";
   }
 
-  if(playerHP <= 0){
+  if(playerHP <= 0){ //player loses
     var disable = document.getElementById("attack");
     var disable1 = document.getElementById("defend");
     disable1.setAttribute("disabled", "");
@@ -349,13 +350,13 @@ function playerDefend(){
     document.getElementById("opponentHP").innerHTML = " " + opponentHP;
     alert("The game has ended. You LOSE!");
 
-    script = "The game has ended. You LOSE!" + '\n';
+    script = "The game has ended. You LOSE!" + '\n'; //displays loss event 
     fulllog = script + fulllog;
     document.getElementById("log").value = fulllog;
-    return(0);
+    return(0); //immediately ends the function
   }
-
-  if (opponentHP <= 0){
+  
+  if (opponentHP <= 0){ //opponent loses
     var disable = document.getElementById("attack");
     var disable1 = document.getElementById("defend");
     disable1.setAttribute("disabled", "");
@@ -367,14 +368,14 @@ function playerDefend(){
     alert("The game has ended. You WIN!");
 
     script = "The game has ended. You WIN!" + '\n';
-    fulllog = script + fulllog;
-    document.getElementById("log").value = fulllog;
+    fulllog = script + fulllog; //updates the log
+    document.getElementById("log").value = fulllog; //displays the log
     return(0);
   }
 
   var secondmove2 = document.getElementById("defend");
-  secondmove2.removeAttribute("disabled");
-  return[opponentHP, playerHP, fulllog];
+  secondmove2.removeAttribute("disabled"); //enables the defend button (if player goes first)
+  return[opponentHP, playerHP, fulllog]; //returns the values to be looped
 }
 
 document.getElementById("attack").addEventListener('click', function(){
